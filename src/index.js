@@ -7,15 +7,17 @@ app.set('port', process.env.PORT || 3000);
 app.set('json spaces', 2);
 
 //middlewares
+//especificación de morgan para captura de solicitudes
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
+//El modulo express estendera fragementos json
 app.use(express.json());
 
-//routes
+//llamado a routes
 app.use(require('./routes/demo'));
 
 // iniciando server
-app.listen(3000, ()=> {
+app.listen(app.get('port'), ()=> {
     console.log(`Server on port ${app.get('port')}`)
 
 })
