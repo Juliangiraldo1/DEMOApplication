@@ -59,7 +59,7 @@ router.get('/demo/:id', validationToken, (req, res) => {
 })
 
 //Creación de demo con un body enviado
-router.post('/demo/', (req, res) => {
+router.post('/demo/',validationToken, (req, res) => {
 
     jwt.verify(req.token, 'secretkey', (err, authData) => {
         if (err) {
@@ -95,7 +95,7 @@ router.post('/demo/', (req, res) => {
 })
 
 //Actualización de demo con un parametro enviado y un body con la información a actualizar
-router.put('/demo/:id', (req, res) => {
+router.put('/demo/:id', validationToken, (req, res) => {
 
     jwt.verify(req.token, 'secretkey', (err, authData) => {
         if (err) {
