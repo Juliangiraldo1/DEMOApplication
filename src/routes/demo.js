@@ -122,7 +122,7 @@ router.put('/demo/:id', validationToken, (req, res) => {
 })
 
 //Eliminacion del demo con un id enviado en el parametro
-router.delete('/demo/:id', (req, res) => {
+router.delete('/demo/:id',validationToken, (req, res) => {
 
     jwt.verify(req.token, 'secretkey', (err, authData) => {
         if (err) {
