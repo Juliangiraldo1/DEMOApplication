@@ -9,12 +9,12 @@ const mysqlConnection = require('../database');
 //Login de generación de token
 router.post('/login/', (req, res) => {
     const user = {
-        id: 1,
-        nombre: "eric",
-        email: "eric@hot.com"
-    }
-    //Se crea un token basandose en el usuario especificado, una cadena, y un tiempo de expiración
-    jwt.sign({ user: user }, 'secretkey', { expiresIn: "120s" }, (err, token) => {
+            id: 1,
+            nombre: "eric",
+            email: "eric@hot.com"
+        }
+        //Se crea un token basandose en el usuario especificado, una cadena, y un tiempo de expiración
+    jwt.sign({ user: user }, 'secretkey', { expiresIn: "60m" }, (err, token) => {
         res.json({
             token: token
         })
@@ -58,8 +58,47 @@ router.get('/demo/:id', validationToken, (req, res) => {
     })
 })
 
+//list demo by artist_name with petition get and params in the request
+router.get('/demo/search/:art_name', validationToken, (req, res) => {
+
+    jwt.verify(req.token, 'secretkey', (err, authData) => {
+        if (err) {
+            res.sendStatus(403)
+        } else {
+            const { art_name } = req.params;
+            mysqlConnection.query('SELECT * FROM DEMO WHERE NICKNAME_ART = ?', [art_name], (err, rows, fields) => {
+                if (!err) {
+                    res.json(rows);
+                } else {
+                    console.log(err);
+                }
+            })
+        }
+    })
+})
+
+//list demo by artist_name with petition get and params in the request
+router.get('/demo/search/:art_name/:demo', validationToken, (req, res) => {
+
+    jwt.verify(req.token, 'secretkey', (err, authData) => {
+        if (err) {
+            res.sendStatus(403)
+        } else {
+            const { art_name } = req.params;
+            const { demo } = req.params;
+            mysqlConnection.query('SELECT * FROM DEMO WHERE NICKNAME_ART = ? AND NOMBRE_DEM = ?', [art_name, demo], (err, rows, fields) => {
+                if (!err) {
+                    res.json(rows);
+                } else {
+                    console.log(err);
+                }
+            })
+        }
+    })
+})
+
 //Creación de demo con un body enviado
-router.post('/demo/',validationToken, (req, res) => {
+router.post('/demo/', validationToken, (req, res) => {
 
     jwt.verify(req.token, 'secretkey', (err, authData) => {
         if (err) {
@@ -122,7 +161,7 @@ router.put('/demo/:id', validationToken, (req, res) => {
 })
 
 //Eliminacion del demo con un id enviado en el parametro
-router.delete('/demo/:id',validationToken, (req, res) => {
+router.delete('/demo/:id', validationToken, (req, res) => {
 
     jwt.verify(req.token, 'secretkey', (err, authData) => {
         if (err) {
