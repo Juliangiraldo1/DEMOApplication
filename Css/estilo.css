@@ -1,0 +1,141 @@
+    body {
+        background-image: url("/Imagenes/rrrr222.png");
+        text-align: center;
+        background-size: cover;
+        position: relative;
+        background-repeat: repeat-y;
+        background-size: 10rem;
+    }
+    
+    .get-in-touch {
+        max-width: 800px;
+        margin: 50px auto;
+        position: relative;
+    }
+    
+    .get-in-touch .title {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 3.2em;
+        line-height: 48px;
+        padding-bottom: 48px;
+        color: #050d4d;
+        background: #050d4d;
+        background: -moz-linear-gradient(left, #13e8f3 0%, #050d4d 100%) !important;
+        background: -webkit-linear-gradient(left, #13e8f3 0%, #050d4d 100%) !important;
+        background: linear-gradient(to right, #13e8f3 0%, #050d4d 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+    }
+    
+    .contact-form .form-field {
+        position: relative;
+        margin: 32px 0;
+    }
+    
+    .contact-form .input-text {
+        display: block;
+        width: 100%;
+        height: 36px;
+        border-width: 0 0 2px 0;
+        border-color: #050d4d;
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 400;
+    }
+    
+    .contact-form .input-text:focus {
+        outline: none;
+    }
+    
+    .contact-form .input-text:focus+.label,
+    .contact-form .input-text.not-empty+.label {
+        -webkit-transform: translateY(-24px);
+        transform: translateY(-24px);
+    }
+    
+    .contact-form .label {
+        position: absolute;
+        left: 20px;
+        bottom: 18px;
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 400;
+        color: #050d4d;
+        cursor: text;
+        transition: -webkit-transform .2s ease-in-out;
+        transition: transform .2s ease-in-out;
+        transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+    }
+    
+    .contact-form .submit-btn {
+        display: inline-block;
+        background-color: #000;
+        background-image: linear-gradient(125deg, #13e8f3, #050d4d);
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 16px;
+        padding: 8px 16px;
+        border: none;
+        width: 200px;
+        cursor: pointer;
+    }
+    
+    .contact-form .submit-btn-act {
+        display: inline-block;
+        background-color: #000;
+        background-image: linear-gradient(125deg, #13e8f3, #050d4d);
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 16px;
+        padding: 8px 16px;
+        border: none;
+        width: 200px;
+        cursor: pointer;
+    }
+    
+    .contact-form .submit-btn-actu {
+        position: relative;
+        background-color: #000;
+        background-image: linear-gradient(125deg, #13e8f3, #050d4d);
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 16px;
+        padding: 8px 16px;
+        border: none;
+        width: 200px;
+        cursor: pointer;
+    }
+    
+    .contact-form .submit-btn-bor {
+        display: inline-block;
+        background-color: #000;
+        background-image: linear-gradient(125deg, #13e8f3, #050d4d);
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 16px;
+        padding: 8px 16px;
+        border: none;
+        width: 200px;
+        cursor: pointer;
+    }
+    
+    .contact-form .form-control {
+        display: block;
+        width: 100%;
+        height: 36px;
+        border-width: 0 0 2px 0;
+        border-color: #050d4d;
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 400;
+    }
+    
+    .navbar {
+        background-image: linear-gradient(125deg, #13e8f3, #050d4d);
+    }
